@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# Usage: ./autosleep.sh <minutes>
-# Example: ./autosleep.sh 30   --> sleep after 30 minutes
-
 if [ -z "$1" ]; then
-  echo "Usage: $0 <minutes>"
+  echo "Usage: autosleep <minutes>"
   exit 1
 fi
 
 MINUTES=$1
 SECONDS=$((MINUTES * 60))
 
-echo "System will go to sleep in $MINUTES minute(s)..."
-sleep $SECONDS
-systemctl suspend
+echo "System will sleep in $MINUTES minute(s)..."
+
+# Run in background and disown from terminal
+(sleep $SECONDS && systemctl suspend) &
+disown
+
