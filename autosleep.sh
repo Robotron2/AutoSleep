@@ -5,12 +5,19 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-MINUTES=$1
-SECONDS=$((MINUTES * 60))
+minutes=$1
+seconds=$((minutes * 60))
 
-echo "System will sleep in $MINUTES minute(s)..."
+echo "System will sleep in $minutes minute(s)..."
+echo "Press Ctrl+C to cancel."
 
-# Run in background and disown from terminal
-(sleep $SECONDS && systemctl suspend) &
-disown
+# Countdown
+while [ $seconds -gt 0 ]; do
+  echo -ne "⏳ Sleeping in $seconds seconds...   \r"
+  sleep 1
+  seconds=$((seconds - 1))
+done
+
+echo -e "\n💤 Time's up! Going to sleep..."
+systemctl suspend
 
