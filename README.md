@@ -17,7 +17,7 @@ A simple Bash script for Linux Mint (and other Linux distros) that automatically
 
 1. Clone or copy this repository to your system:
     ```bash
-    git clone https://github.com/Robotron2/Autosleep-script-for-linux-distros.git
+    git clone https://github.com/Robotron2/Autosleep.git
     cd AutoSleep
     ```
 2. Make it executable
