@@ -26,7 +26,7 @@ A simple Bash script for Linux Mint (and other Linux distros) that automatically
     ```
 3. (Optional) Add an alias to your ~/.bashrc for quick use
     ```bash
-    echo 'alias autosleep="~/Documents/Scripts/AutoSleep/autosleep.sh"' >> ~/.bashrc
+    echo 'alias autosleep="~/AutoSleep/autosleep.sh"' >> ~/.bashrc
     source ~/.bashrc
     ```
 
