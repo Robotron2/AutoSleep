@@ -19,5 +19,5 @@ while [ $seconds -gt 0 ]; do
 done
 
 echo -e "\n💤 Time's up! Going to sleep..."
-systemctl suspend
+systemctl suspend -i
 
